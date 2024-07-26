@@ -52,6 +52,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'estudiantes.apps.EstudiantesConfig',
+    'cuentas'
+
 ]
 
 MIDDLEWARE = [
@@ -82,6 +86,7 @@ TEMPLATES = [
     },
 ]
 
+
 WSGI_APPLICATION = 'tup.wsgi.application'
 
 
@@ -101,6 +106,8 @@ DATABASES = {
         'PORT': env('DB_PORT', default='3306'),
     }
 }
+
+AUTH_USER_MODEL="cuentas.User"
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
