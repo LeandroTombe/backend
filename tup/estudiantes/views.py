@@ -20,10 +20,14 @@ class MateriasView(APIView):
 
 #Crud de materia
 
+
+#creacion de materia
 class MateriaCreateView(generics.CreateAPIView):
     queryset = Materia.objects.all()
     serializer_class = MateriaSerializer
     permission_classes = [IsAuthenticated, IsAlumno]
+
+
 
 class MateriaListView(generics.ListAPIView):
     queryset = Materia.objects.all()
