@@ -39,3 +39,5 @@ class MateriaDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Materia.objects.all()
     serializer_class = MateriaSerializer
     permission_classes = [IsAuthenticated, IsAlumno]
+    
+#prueba de ci
