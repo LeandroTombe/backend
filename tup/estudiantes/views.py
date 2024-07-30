@@ -17,3 +17,20 @@ class MateriasView(APIView):
     def get(self, request, *args, **kwargs):
         # Lógica para listar materias
         return Response({"message": "Acceso permitido a materias para Alumno"}, status=200)
+
+#Crud de materia
+
+class MateriaCreateView(generics.CreateAPIView):
+    queryset = Materia.objects.all()
+    serializer_class = MateriaSerializer
+    permission_classes = [IsAuthenticated, IsAlumno]
+
+class MateriaListView(generics.ListAPIView):
+    queryset = Materia.objects.all()
+    serializer_class = MateriaSerializer
+    permission_classes = [IsAuthenticated, IsAlumno]
+
+class MateriaDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Materia.objects.all()
+    serializer_class = MateriaSerializer
+    permission_classes = [IsAuthenticated, IsAlumno]
