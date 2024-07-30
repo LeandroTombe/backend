@@ -15,6 +15,18 @@ import environ
 from datetime import timedelta
 import os
 
+#Configurar las variables de entorno
+# Inicializa environ
+env = environ.Env(
+    # Establece valores por defecto y convierte a los tipos esperados
+    DEBUG=(bool, False)
+)
+
+# Lee el archivo .env si existe
+environ.Env.read_env(env_file='.env')
+
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -23,7 +35,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-98l8sabplwtv^6tz#ly+7cn-l-6i46$-ljigu+&j0bas6gp%w%'
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -38,16 +50,6 @@ CORS_ALLOWED_ORIGINS = [
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-#Configurar las variables de entorno
-# Inicializa environ
-env = environ.Env(
-    # Establece valores por defecto y convierte a los tipos esperados
-    DEBUG=(bool, False)
-)
-
-# Lee el archivo .env si existe
-environ.Env.read_env(env_file='.env')
 
 
 

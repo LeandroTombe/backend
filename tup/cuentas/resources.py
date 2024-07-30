@@ -35,7 +35,7 @@ class UserResource(resources.ModelResource):
         # Verificar si el usuario ya existe
         if User.objects.filter(email=email).exists():
             # Marcar la fila para que no se importe
-            raise Exception(f"El usuario con el email {email} ya existe. La fila será ignorada.")
+            raise ValueError(f"El usuario con el email {email} ya existe. La fila será ignorada.")
         
         
         # Usar el email como contraseña
@@ -58,6 +58,6 @@ class UserResource(resources.ModelResource):
         user.set_password(row['password'])
         user.save()
         # Asignar el rol "Estudiantes"
-        group, created = Group.objects.get_or_create(name='Alumno')
+        group, _ = Group.objects.get_or_create(name='Alumno')
         user.groups.add(group)
 
