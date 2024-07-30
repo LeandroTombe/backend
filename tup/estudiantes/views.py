@@ -34,6 +34,7 @@ class MateriaListView(generics.ListAPIView):
     serializer_class = MateriaSerializer
     permission_classes = [IsAuthenticated, IsAlumno]
 
+#actualizacion de materia
 class MateriaDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Materia.objects.all()
     serializer_class = MateriaSerializer
