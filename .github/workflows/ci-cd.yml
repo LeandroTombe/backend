@@ -4,6 +4,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    env:
+      GMAIL_PASSWORD: ${{ secrets.GMAIL_PASSWORD }}
+
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v2
