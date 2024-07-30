@@ -1,4 +1,4 @@
-on: [push, pull_request]
+on: [push]
 
 jobs:
   build:
@@ -68,3 +68,9 @@ jobs:
         
         # Ejecuta los tests
         pytest -v
+
+    - name: scanear SonarCloud 
+      uses: SonarSource/sonarcloud-github-action@master
+      env:
+          SONAR_TOKEN: ${{ secrets. SONARCLOUD_TOKEN }}
+          
