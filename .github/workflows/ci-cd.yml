@@ -17,7 +17,7 @@ jobs:
 
     - name: Install Dependencies
       run: |
-        . venv/bin/activate
+        . env/bin/activate
         cd tup
         python -m pip install --upgrade pip
         pip install -r requirements.txt
