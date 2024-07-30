@@ -1,8 +1,8 @@
 from django.urls import path
 
-from .views import MateriaListCreateView
+from .views import MateriasView
 
 urlpatterns = [
-    path('materia/', MateriaListCreateView.as_view()),
+    path('materia/', MateriasView.as_view()),
     
 ]
