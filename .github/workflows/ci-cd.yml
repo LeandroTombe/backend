@@ -21,7 +21,7 @@ jobs:
       DB_NAME: ${{ secrets.DB_NAME }}
       DB_USER: ${{ secrets.DB_USER }}
       DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
-      DB_HOST: 127.0.0.1
+      DB_HOST: 127.0.0.1  # La IP local del contenedor de MySQL
       DB_PORT: 3306
       ALLOWED_HOSTS: ${{ secrets.ALLOWED_HOSTS }}
       GMAIL_TUP: ${{ secrets.GMAIL_TUP }}
