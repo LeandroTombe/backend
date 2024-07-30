@@ -70,10 +70,14 @@ jobs:
         pytest -v
 
     - name: Install tox and any other packages
-      run: pip install tox
+      run: | 
+        cd tup
+        pip install tox
 
     - name: Run tox
-      run: tox -e py
+      run: |
+        cd tup
+        tox -e py
 
     - name: scanear SonarCloud 
       uses: SonarSource/sonarcloud-github-action@master
