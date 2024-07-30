@@ -1,8 +1,9 @@
 from django.db import models
+from .validators import validar_nombre
 
 class Materia(models.Model):
     idMateria = models.IntegerField(primary_key=True)
-    nombre = models.CharField(max_length=50)
+    nombre = models.CharField(max_length=50, validators=[validar_nombre])
 
     def __str__(self):
         return self.nombre
